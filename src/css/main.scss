@@ -4,4 +4,339 @@
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
+    h1,h2,h3,h4,h5{
+    	font-family:$f-serif-headline;
+    	margin:0;
+    }
+}
+
+.interactive-atom{
+	 // padding:0 10px;
+}
+
+.gv-parliament-groups-container{
+	// padding: 0 10px;
+
+	.gv-search-container{
+		width:100%;
+		max-width:620px;
+		margin-top:12px;
+		margin-bottom:12px;
+		
+		button{
+			display:block;
+			visibility: hidden;
+			background:#eee;
+			color:#333;
+			border:none;
+			height:24px;
+			border-radius:20px;
+			font-size:12px;
+			font-family:$f-sans-serif-text;
+			line-height: 1em;
+			margin-top:6px;
+			outline:none;
+			padding-left:8px;
+			padding-right:8px;
+			&:hover{
+				background:#ddd;
+			}
+		}
+		input{
+			background:#fff;
+			border:1px solid #eee;
+			font-size:16px;
+			padding-left:12px;
+			width:100%;
+			border-radius:100px;
+			height:42px;
+			outline:none;
+			box-sizing:border-box;
+		}
+		@media(min-width:620px){
+			input{
+				font-size:24px;
+			}
+		}
+		@media(min-width:1140px){
+			margin-left:160px;
+		}
+		@media(min-width:1300px){
+			margin-left:240px;
+		}
+	}
+
+	#gv-mp-description{
+		visibility: hidden;
+		font-size:12px;
+		font-family:$f-sans-serif-text;
+		color:#767676;
+		line-height:16px;
+		margin-top:6px;
+		@media(min-width:620px){
+			margin-top:18px;
+			line-height:18px;
+			font-size:16px;
+		}
+	}
+	
+
+	.gv-group-container{
+		margin-bottom:48px;
+		border-top:1px solid #dedede;
+		padding-top:6px;
+		&.inactive{
+			display:none;
+		}
+	}
+
+	.gv-group-name{
+		h2{
+			font-size:24px;
+			line-height: 1em;
+		}
+		h3{
+			font-size:36px;
+			line-height:1em;
+			font-weight:100;
+			color:#4BC6DF;
+			margin-top:3px;
+		}
+	}
+	.gv-mps-container{
+		margin-top:24px;
+	}
+	.gv-companies-container{
+		margin-top:12px;
+		max-width:480px;
+	}
+
+
+	.gv-mp-name{
+		margin-right:2px;
+		position: relative;
+		padding-left:12px;
+		box-sizing:border-box;
+		span{
+			cursor:pointer;
+			color:#767676;
+			&:hover{
+				background:#B7C2C9;
+				color:#fff;
+			}
+		}
+		&:before{
+			display: inline-block;
+			width: 6px;
+			height: 12px;
+			content: '';
+			background: #eee;
+			border-radius: 2px;
+			vertical-align: top;
+			margin-top: 3px;
+			margin-right: 2px;
+			position:absolute;
+			left:1px;
+		}
+		&[data-party="Conservative"]:before{
+			background-color:#005689;
+		}
+		&[data-party="Labour"]:before{
+			background-color:#E31F26;
+		}
+		&[data-party="Labour(Co-op)"]:before{
+			background-color:#E31F26;
+		}
+		&[data-party="Scottish National Party"]:before{
+			background-color:#FCDD03;
+		}
+		&[data-party="Liberal Democrat"]:before{
+			background-color:#FFB900;
+		}
+		&[data-party="Ulster Unionist Party"]:before{
+			// background-color:purple;
+		}
+		&[data-party="Crossbench"]:before{
+			background-color:#aaa;
+		}
+		&[data-party="Democratic Unionist Party"]:before{
+			background-color:#99002e;
+		}
+
+		&[data-party="Democratic Unionist Party"]:before{
+			background-color:#99002e;
+		}
+		&[data-party="Democratic Unionist Party"]:before{
+			background-color:#99002e;
+		}
+		&[data-party="Democratic Unionist Party"]:before{
+			background-color:#99002e;
+		}	
+	}
+	.fund-collapsed{
+		display: none;
+	}
+	.funds-visible{ 
+		.fund-collapsed{
+			display: block;
+		}
+		.gv-btn-toggle[data-toggle="show"]{
+			display:none;
+		}
+		.gv-btn-toggle[data-toggle="hide"]{
+			display:block;
+		}
+	}
+	
+	.gv-list-container{
+		h4{
+			font-family:$f-sans-serif-text;
+			font-weight:bold;
+			font-size:14px;
+			line-height:18px;
+		}
+		.gv-list{
+			margin: 0 0;
+			padding:0;
+			line-height:18px;
+			font-size:14px;
+			span{
+				font-family:$f-sans-serif-text;
+				display: inline;
+			}
+			ul{
+				margin:0;
+				padding:0;
+				li{
+					list-style:none;
+					position: relative;
+					color:#767676;
+					&:after{
+						clear:both;
+						display: block;
+						content:'';
+					}
+					span:first-child:hover{
+							// background:#63717a;
+							// border-radius:3px;
+							// color:#fff;
+						
+					}
+				}
+				span:first-child{
+					margin-right:70px;
+					display: inline-block;
+					// cursor:pointer;
+				}
+				span:last-child{
+					position: absolute;
+					right:0;
+					top:0;
+				}
+			}
+		}
+		@media(min-width:480px){
+			.gv-list,h4{
+				font-size:16px;
+				line-height:21px;
+			}
+		}
+	}
+	
+	.gv-btn-toggle{
+		background:#005689;
+		outline:none;
+		display:inline-block;
+		color:#fff;
+		border-radius:100px;
+		border:none;
+		font-size:12px;
+		font-family:$f-sans-serif-text;
+		padding-left:8px;
+		padding-right:8px;
+		line-height:1em;
+		height:21px;
+		vertical-align: top;
+		margin-top:-1px;
+		padding-top:3px;
+	}
+	.gv-btn-toggle[data-toggle="hide"]{
+		display: none;
+	}
+	@media(min-width:620px){
+		.gv-group-name{
+			width:220px;
+			position: absolute;
+		}
+		.gv-lists{
+			margin-left:240px;
+		}
+		.gv-mps-list{
+			overflow: hidden;
+		}
+		.gv-mps-list{
+			column-count:2;
+		}
+		.gv-list-container .gv-list .gv-mp-name{
+			display: block;
+			line-height: 1em;
+			margin-bottom:6px;
+		}	
+		.gv-mp-name:before{
+			display: inline-block;
+			width: 6px;
+			height: 12px;
+			content: '';
+			background: #eee;
+			border-radius: 2px;
+			vertical-align: top;
+			margin-top: 2px;
+			margin-right: 4px;
+		}
+		.gv-companies-container{
+			margin-top:30px;
+		}
+
+		.gv-mps-container{
+			margin-top:0;
+		}
+		.gv-btn-toggle{
+			font-size:14px;
+		}
+	}
+	@media(min-width:980px){
+		.gv-group-container{
+			min-height:88px;
+		}
+		.gv-list-container{
+			// width:calc( ( 100% / 2) - 10px );
+			margin:0;
+			h4{
+				// display:none;
+			}
+		}
+		.gv-companies-container{
+			width:calc(40% - 10px);
+		}
+		.gv-mps-container{
+			width:calc(60% - 10px);
+		}
+		.gv-lists{
+			overflow: hidden;
+		}
+		.gv-mps-container{
+			float:left;
+		}
+		.gv-companies-container{
+			float:right;
+		}
+	}
+	@media(min-width:1300px){
+		.gv-mps-list{
+			column-count:3;
+		}	
+		.gv-companies-container{
+			width:calc(33% - 10px)
+		}
+	}
 }

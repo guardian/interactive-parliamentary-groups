@@ -1,1 +1,47 @@
-<div>Hello world!</div>
+<div class="gv-parliament-groups-container">
+<div class="gv-search-container">
+	<input id="gv-search-input" type="text"  list="suggestions" placeholder="Search for MP"/>
+	<datalist id="suggestions">
+	{{#each mpsList}}
+		<option value="{{.}}">{{.}}</option>
+	{{/each}}
+	</datalist>
+	<button id="clear-input-btn">Clear search</button>
+	<p id="gv-mp-description">f</p>
+</div>
+<div class="gv-groups-container">
+	{{#each groups}}
+		<section class="gv-group-container" data-group-name="{{APPG}}">
+			<div class="gv-group-name">
+				<h2>{{APPG}}</h2>
+				<h3>£{{Total}}</h3>
+			</div>
+			<div class="gv-lists">
+				<div class="gv-mps-container gv-list-container">
+					<h4><strong>MPs in this group</strong></h4>
+					<div class="gv-mps-list gv-list">
+						{{#each mps}}
+							<span data-party="{{party}}" class="{{#if isCollapsed}}{{/if}} gv-mp-name" data-name="{{id}}" data-funds="{{totalFunds}}" data-group="{{../APPG}}"><span>{{name}}</span></span>
+						{{/each}}
+					</div>
+				</div>
+
+				<div class="gv-companies-container gv-list-container">
+					<h4><strong>Funding companies</strong></h4>
+					<div class="gv-companies-list gv-list">
+						<ul>
+						{{#each funds}}
+							<li class="{{#if isCollapsed}}fund-collapsed{{/if}}" data-name="{{id}}" data-group="{{../APPG}}"><span>{{name}} {{#if Description}}– {{Description}} {{/if}}</span> <span>£{{totalFormatted}}</span></li>
+						{{/each}}
+						</ul>
+						{{#if isCollapsed}}
+							<button class="gv-btn-toggle" data-toggle="show">Show all companies</button>
+							<button class="gv-btn-toggle" data-toggle="hide">Hide</button>
+						{{/if}}
+					</div>
+				</div>
+			</div>
+		</section>
+	{{/each}}
+</div>
+</div>

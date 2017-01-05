@@ -157,7 +157,7 @@ gulp.task('build', ['_build'], () => {
         .pipe(size({'gzip': true, 'showFiles': true}))
 });
 
-gulp.task('deploy', ['build'], cb => {
+gulp.task('deploy', ['local','build'], cb => {
     inquirer.prompt({
         type: 'list',
         name: 'env',
